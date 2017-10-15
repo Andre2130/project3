@@ -1,0 +1,26 @@
+{
+  "name": "project3",
+  "version": "1.0.0",
+  "description": "Trello: https://trello.com/b/HzEIByEg/project-3 WireFrame: https://gomockingbird.com/projects/leyztkz/4gXVnC ERD: https://gomockingbird.com/projects/leyztkz/cWSZVc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andre2130/project3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Andre2130/project3/issues"
+  },
+  "homepage": "https://github.com/Andre2130/project3#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "mongoose": "^4.12.2"
+  }
+}
