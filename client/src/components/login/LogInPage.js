@@ -2,19 +2,25 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
-class LogIn extends Component {
+class LogInPage extends Component {
   state = {
     users: []
   }
-  commentWIllMount() {
-      this.getAllUsers()
-  }
+  
 
-  getAllUsers = () => {
-    axios.get('localhost:3001/api/users').then(res => {
+  getAllUsers = async () => {
+    console.log('getting users')
+    try {
+      const res = await axios.get('/api/users')
+      console.log(res)
       this.setState({users: res.data})
-    })
+    } catch (err) {
+      console.log(err)
+    }
   }
+  componentWillMount () {
+    this.getAllUsers()
+}
   
   render () {
     return (
@@ -29,4 +35,4 @@ class LogIn extends Component {
   }
 }
 
-export default LogIn
+export default LogInPage
