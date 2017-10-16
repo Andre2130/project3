@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import styled from 'styled-components'
 import HomePage from './components/home/HomePage'
 import LogInPage from './components/login/LogInPage'
-import IdeaPage from './components/collections/CollectionsPage'
+import CollectionsPage from './components/collections/CollectionsPage'
 
 class App extends Component {
   render () {
@@ -16,7 +16,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={HomePage}/>
             <Route path="/login" component={LogInPage}/>
-            <Route path="/user/:userId" component={IdeaPage}/>
+            <Route path="/user/:userId" component={CollectionsPage}/>
           </Switch>
         </div>
       </Router>
