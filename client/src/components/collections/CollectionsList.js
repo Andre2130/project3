@@ -15,10 +15,8 @@ const CollectionsList = (props) => {
     <CollectionsListStyles>
       {props.collections.map((collection) => {
         return (
-          <Collection key={collection._id} _id={collection._id}
-            handleChange={props.handleChange}
-            updateCollection={props.updateCollection} deletecollection={props.deleteCollection}
-            title={collection.title} description={collection.description} />
+          <Collection key={collection._id}
+            title={collection.title} albums={collection.albums}/>
         )
       })}
     </CollectionsListStyles>

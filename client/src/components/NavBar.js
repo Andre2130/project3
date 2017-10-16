@@ -18,7 +18,7 @@ const NavBar = () => {
         <Link to="/login">LogIn</Link>
       </div>
       <div>
-          <Link to="/collections/:userId">Collections</Link>
+          <Link to="/collections">Collections</Link>
       </div>
     </div>
   )

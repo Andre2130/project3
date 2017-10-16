@@ -11,16 +11,17 @@ const Andre = new UserModel({
   })
 
 const WTC = new AlbumModel({
-    name: 'The Saga continues',
+    name: 'The Saga Continues',
     description: 'Artist: Wu Tang Clan'
 })
 
 const soul = new CollectionModel({
-    title: 'Hip-Hop',
+    title: 'Soul',
     albums: [WTC]
 })
 
 UserModel.remove({})
 .then(() => Andre.save())
+.then(() => soul.save())
 .then(() => console.log('Successful Save'))
 .then(() => mongoose.connection.close())
