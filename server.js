@@ -3,6 +3,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const app = express();
+const UsersController = require('./routes/UserController')
+
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGODB_URI); //mongodb://localhost/project3
 
@@ -18,11 +20,13 @@ connection.on('error', (err) => {
 
 app.use(express.static(__dirname + '/client/build/'));
 app.use(bodyParser.json());
+app.use('/api/users', UsersController)
+
 app.get('/', (req,res) => {
     res.sendFile(__dirname + '/client/build/index.html')
   })
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log("Magic happening on port " + PORT);
 })
