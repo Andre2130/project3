@@ -14,4 +14,11 @@ router.get('/', async (req, res) => {
     }
   })
 
+  router.post('/', (req, res) => {
+    const newUser = new User(req.body.user)
+    newUser.save().then((user) => {
+      res.json(user)
+    }).catch(console.log)
+  })
+
 module.exports = router;
