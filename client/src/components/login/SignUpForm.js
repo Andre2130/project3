@@ -21,14 +21,23 @@ createUser = () => {
   }
 
   handleChange = (e) => {
-    const user = {...this.state.user}
-    user[e.target.name] = e.target.value
-    this.setState({user})
+      console.log(e.target.name)
+      const attribute = e.target.name
+    const updateUser = {...this.state.newUser}
+    updateUser[attribute] = e.target.value
+    this.setState({newUser: updateUser})
   }
 
   handleSignUp = (e) => {
     e.preventDefault()
     this.createUser()
+  }
+
+  handleSubmit = async (e) => {
+      e.preventDefault()
+      const res = await axios.post('/api/users', {
+          'user': this.state.newUser
+      })
   }
 
 render () {

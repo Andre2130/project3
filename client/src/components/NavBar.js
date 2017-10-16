@@ -17,6 +17,9 @@ const NavBar = () => {
       <div>
         <Link to="/login">LogIn</Link>
       </div>
+      <div>
+          <Link to="/collections/:userId">Collections</Link>
+      </div>
     </div>
   )
 }

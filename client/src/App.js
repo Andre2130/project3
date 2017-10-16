@@ -14,8 +14,8 @@ class App extends Component {
           <NavBar />
           <Switch>
             <Route exact path="/" component={HomePage}/>
-            <Route path="/login" component={LogInPage}/>
-            {/* <Route path="/user/:userId" component={CollectionsPage}/> */}
+            <Route exact path="/login" component={LogInPage}/>
+             <Route exact path="/user/:userId" component={CollectionsPage}/>
           </Switch>
         </div>
       </Router>
