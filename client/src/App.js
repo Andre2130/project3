@@ -4,15 +4,14 @@ import styled from 'styled-components'
 import HomePage from './components/home/HomePage'
 import LogInPage from './components/login/LogInPage'
 import CollectionsPage from './components/collections/CollectionsPage'
+import NavBar from './components/NavBar'
 
 class App extends Component {
   render () {
     return (
       <Router>
         <div>
-          <div>
-            <Link to='/login'>Login</Link>
-          </div>
+          <NavBar />
           <Switch>
             <Route exact path="/" component={HomePage}/>
             <Route path="/login" component={LogInPage}/>
