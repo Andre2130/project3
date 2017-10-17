@@ -36,11 +36,13 @@ class App extends Component {
 
   componentWillMount(){
     this.getAllUsers()
+    this.getAllCollections()
   }
 
   render () {
 
     const LogInPageComponent = () => (<LogInPage users={this.state.users} />)
+    const CollectionPageComponent = () => (<CollectionsPage collections={this.state.collections} />)
     return (
       <Router>
         <div>
@@ -48,7 +50,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={HomePage}/>
             <Route exact path="/login" render={LogInPageComponent}/>
-             <Route exact path="/collections" component={CollectionsPage}/>
+             <Route exact path="/collections" render={CollectionPageComponent}/>
           </Switch>
         </div>
       </Router>

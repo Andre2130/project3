@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
       // Find all users
       const collections = await CollectionModel.find({})
       // Send JSON of all Collections
-      res.json(Collections)
+      res.json(collections)
     } catch (err) {
       res.send(err)
     }

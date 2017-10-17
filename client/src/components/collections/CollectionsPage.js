@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
 import CollectionsList from './CollectionsList'
+import { Link } from 'react-router-dom'
 
 const CollectionTitleStyle = styled.div`
   text-align:center;
@@ -30,6 +31,9 @@ class CollectionPage extends Component {
         </CollectionTitleStyle>
         <CollectionsList collections={this.props.collections}
         />
+        {this.props.collections.map(collection => {
+            return(<Link to={`/collections/${collection._id}`}>{collection.name}</Link>)
+        })}
       </div>
     )
   }
