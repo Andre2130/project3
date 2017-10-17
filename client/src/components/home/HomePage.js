@@ -5,6 +5,7 @@ class HomePage extends Component {
         return(
             <div>
                 <h1>Sauce Radio</h1>
+                <button>Enter The Sauce</button>
             </div>
         )
     }

@@ -5,13 +5,15 @@ import HomePage from './components/home/HomePage'
 import LogInPage from './components/login/LogInPage'
 import CollectionsPage from './components/collections/CollectionsPage'
 import NavBar from './components/NavBar'
+import UserPage from './components/login/UserPage'
 import axios from 'axios'
 
 class App extends Component {
   state = {
     users: [],
     collections: [],
-    albums: []
+    albums: [],
+    Users: []
 
   }
   
@@ -42,6 +44,7 @@ class App extends Component {
 
   render () {
 
+    const UserPageComponent = (props) => (<UserPage users={this.state.users} {...props}/>)
     const LogInPageComponent = () => (<LogInPage users={this.state.users} />)
     const CollectionPageComponent = () => (<CollectionsPage collections={this.state.collections} albums={this.state.albums} />)
     return (
@@ -52,6 +55,7 @@ class App extends Component {
             <Route exact path="/" component={HomePage}/>
             <Route exact path="/login" render={LogInPageComponent}/>
             <Route exact path="/collections" render={CollectionPageComponent}/>
+            <Route exact path="/user/:id" render={UserPageComponent} />
           </Switch>
         </div>
       </Router>
