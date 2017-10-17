@@ -4,10 +4,10 @@ import styled from 'styled-components'
 // You can easily nest css components in your styled-components
 // This gets converted into raw css when loaded on your page
 const AlbumStyles = styled.div`
-  height: 300px;
-  width: 300px;
+  height: 30px;
+  width: 30px;
   margin: 20px;
-  background-color: rgba(253, 255, 0, 0.79);
+  background-color: rgba(0, 0, 0, 0.79);
   input {
     font-weight: bold;
   }
@@ -16,11 +16,11 @@ const AlbumStyles = styled.div`
     font-size: 1.2rem;
     margin: 10px 0;
     border: none;
-    background-color: initial;
+    background-color: rgba(0, 0, 0, 0);
   }
   textarea{
-    width: 95%;
-    height: 70%
+    width: 50%;
+    height: 50%
   }
 `
 

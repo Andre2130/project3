@@ -45,9 +45,9 @@ const Collection = (props) => {
       {/* {this.props.collections.map(collection => {
             return(<Link to={`/collections/${collection._id}`}>{collection.name}</Link>)
         })} */}
+        <AlbumsList albums={props.albums}/>
       <input onChange={handleChange} name="name" value={props.name} />
       <textarea onBlur={updateCollection} onChange={handleChange} name="albums"/>
-      <AlbumsList albums={props.albums}/>
       <button onClick={deleteCollection}>Delete Collection</button>
     </CollectionStyles>
   )
