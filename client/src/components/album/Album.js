@@ -1,10 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import AlbumsList from '../album/AlbumsList'
 
 // You can easily nest css components in your styled-components
 // This gets converted into raw css when loaded on your page
-const CollectionStyles = styled.div`
+const AlbumStyles = styled.div`
   height: 300px;
   width: 300px;
   margin: 20px;
@@ -25,32 +24,28 @@ const CollectionStyles = styled.div`
   }
 `
 
-const Collection = (props) => {
+const Album = (props) => {
   // Creates a method that triggers another function being passed down 
   // another function
-  const deleteCollection = () => {
-    props.deleteCollection(props._id)
+  const deleteAlbum = () => {
+    props.deleteAlbum(props._id)
   }
 
   const handleChange = (event) => {
     props.handleChange(event, props._id)
   }
-  const updateCollection = () => {
-    props.updateCollection(props._id)
+  const updateAlbum = () => {
+    props.updateAlbum(props._id)
   }
 
   return (
-    <CollectionStyles>
+    <AlbumStyles>
       {/* onBlur triggers whenever the user navigates off the input */}
-      {/* {this.props.collections.map(collection => {
-            return(<Link to={`/collections/${collection._id}`}>{collection.name}</Link>)
-        })} */}
       <input onChange={handleChange} name="name" value={props.name} />
-      <textarea onBlur={updateCollection} onChange={handleChange} name="albums"/>
-      <AlbumsList albums={props.albums}/>
-      <button onClick={deleteCollection}>Delete Collection</button>
-    </CollectionStyles>
+      <textarea onBlur={updateAlbum} onChange={handleChange} name="albums" value={props.albums}/>
+      <button onClick={deleteAlbum}>Delete Album</button>
+    </AlbumStyles>
   )
 }
 
-export default Collection
+export default Album

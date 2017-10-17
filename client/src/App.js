@@ -10,7 +10,8 @@ import axios from 'axios'
 class App extends Component {
   state = {
     users: [],
-   collections: []
+    collections: [],
+    albums: []
 
   }
   
@@ -42,7 +43,7 @@ class App extends Component {
   render () {
 
     const LogInPageComponent = () => (<LogInPage users={this.state.users} />)
-    const CollectionPageComponent = () => (<CollectionsPage collections={this.state.collections} />)
+    const CollectionPageComponent = () => (<CollectionsPage collections={this.state.collections} albums={this.state.albums} />)
     return (
       <Router>
         <div>
@@ -50,7 +51,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={HomePage}/>
             <Route exact path="/login" render={LogInPageComponent}/>
-             <Route exact path="/collections" render={CollectionPageComponent}/>
+            <Route exact path="/collections" render={CollectionPageComponent}/>
           </Switch>
         </div>
       </Router>

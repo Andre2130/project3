@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import Collection from './Collection'
+import Album from './Album'
 
-const CollectionsListStyles = styled.div`
+const AlbumsListStyles = styled.div`
   width: 95%;
   margin: 0 auto;
   display: flex;
@@ -10,18 +10,18 @@ const CollectionsListStyles = styled.div`
 `
 // This is a simple stateless component that just loops through an array of props and renders another component
 // Remember to pass props in as an argument when you use stateless functions.
-const CollectionsList = (props) => {
+const AlbumsList = (props) => {
   return (
-    <CollectionsListStyles>
-      {props.collections.map((collection) => {
+    <AlbumsListStyles>
+      {props.albums.map((album) => {
         return (
-          <Collection key={collection._id} _id={collection._id}
+          <Album key={album._id} _id={album._id}
           handleChange={props.handleChange}
-            name={collection.name} albums={collection.albums}/>
+            name={album.name} albums={album.albums}/>
         )
       })}
-    </CollectionsListStyles>
+    </AlbumsListStyles>
   )
 }
 
-export default CollectionsList
+export default AlbumsList
