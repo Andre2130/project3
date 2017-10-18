@@ -17,7 +17,7 @@ const UsersList = (props) => {
         return (
           <User key={user._id} _id={user._id}
           handleChange={props.handleChange}
-            name={user.name} users={user.users} deleteUser={props.deleteUser}/>
+            userName={user.userName} users={user.users} deleteUser={props.deleteUser}/>
         )
       })}
     </UsersListStyles>

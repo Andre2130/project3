@@ -30,7 +30,7 @@ class UserPage extends Component {
   render () {
     return (
       <div>
-        <h1>USER PAGE {this.state.user.userName}</h1>
+        <h1>USER PAGE {this.props.userName}</h1>
         <h3>Please Select an Existing User</h3>
         {this.props.users.map(user => {
           return (<Link to={`/user/${user._id}`}>{user.userName}</Link>)

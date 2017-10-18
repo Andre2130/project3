@@ -1,13 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 
+
 // You can easily nest css components in your styled-components
 // This gets converted into raw css when loaded on your page
 const UserStyles = styled.div`
-  height: 30px;
-  width: 30px;
+  height: 300px;
+  width: 300px;
   margin: 20px;
-  background-color: rgba(0, 0, 0, 0.79);
+  background-image: url("https://www.bsn.eu/wp-content/uploads/2016/12/user-icon-image-placeholder.jpg");
+  background-position: center;
   input {
     font-weight: bold;
   }
@@ -16,7 +18,6 @@ const UserStyles = styled.div`
     font-size: 1.2rem;
     margin: 10px 0;
     border: none;
-    background-color: rgba(0, 0, 0, 0);
   }
   textarea{
     width: 50%;
@@ -41,8 +42,9 @@ const User = (props) => {
   return (
     <UserStyles>
       {/* onBlur triggers whenever the user navigates off the input */}
-      <input onChange={handleChange} name="name" value={props.name} />
-      <textarea onBlur={updateUser} onChange={handleChange} name="users" value={props.users}/>
+      {/* <input onChange={handleChange} name="name" value={props.userName} />
+      <textarea onBlur={updateUser} onChange={handleChange} name="users" value={props.users}/> */}
+      <h1>{props.userName}</h1>
       <button onClick={deleteUser}>Delete User</button>
     </UserStyles>
   )
