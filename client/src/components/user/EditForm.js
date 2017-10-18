@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {Redirect} from 'react-router-dom'
 import axios from 'axios'
 
-class SignUpForm extends Component {
+class EditForm extends Component {
   state = {
     newUser: {
       userName: '',
@@ -31,7 +31,7 @@ class SignUpForm extends Component {
     // Post to our API and create a new user.
     // The second argument here is the payload that 
     // is consumed on the server side as req.body
-    const res = await axios.post('/api/users', {
+    const res = await axios.patch('/api/users', {
       'user': this.state.newUser
     })
     console.log(res.data)
@@ -39,6 +39,18 @@ class SignUpForm extends Component {
     // and add the newly created user's id to state so we can change the route
     this.setState({redirectToUser: true, newUserId: res.data._id})
   }
+//   updateUser = async (userId) => {
+//     const { userId } = this.props.match.params
+//     const id = userId
+
+//     const clonedUser = {...this.state.user}
+//     const user = clonedUser.users.find(i => i._id === userId)
+
+//     const res = await axios.patch(`/api/users/${userId}/users/${id}`, {
+//       user: user
+//     })
+//     this.setState({user: res.data})
+//   }
 
   render () {
     // If statement which is triggered after a new user posts is successful 
@@ -48,22 +60,16 @@ class SignUpForm extends Component {
 
     return (
       <div>
-        <h1>Sign-Up</h1>
+        <h1>Edit</h1>
         <form onSubmit={this.handleSubmit}>
           <div>
             <label htmlFor="userName">User Name</label>
             <input
               onChange={this.handleChange} name="userName"
-              type="text" value={this.state.newUser.userName}
+              type="text" value={this.props.userName}
             />
           </div>
-          <div>
-            <label htmlFor="password">Password</label>
-            <input onChange={this.handleChange}
-              value={this.state.newUser.password}
-              name="password" type="text" />
-          </div>
-          <button>Sign Up</button>
+          <button>Submit</button>
         </form>
       </div>
     )
@@ -71,4 +77,4 @@ class SignUpForm extends Component {
 }
 
 
-export default SignUpForm
+export default EditForm

@@ -17,7 +17,7 @@ const UsersList = (props) => {
         return (
           <User key={user._id} _id={user._id}
           handleChange={props.handleChange}
-          deleteUser={props.deleteUser}
+          deleteUser={props.deleteUser} getAllUsers={props.getAllUsers}
             userName={user.userName} users={user.users} />
         )
       })}

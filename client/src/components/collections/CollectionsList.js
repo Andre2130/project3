@@ -17,7 +17,9 @@ const CollectionsList = (props) => {
         return (
           <Collection key={collection._id} _id={collection._id}
           handleChange={props.handleChange}
-            name={collection.name} albums={collection.albums}/>
+            name={collection.name} albums={collection.albums}
+            deletecollection={this.deletecollection}
+            />
         )
       })}
     </CollectionsListStyles>

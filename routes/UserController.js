@@ -92,7 +92,34 @@ router.delete('/:id', async (req, res) => {
   // Save the updated user
   const saved = await user.save()
   // Send the user object
+  console.log(saved)
   res.json(saved)
 })
+
+// UPDATE route
+router.put('/:id', (request, response) => {
+  
+    // GRAB the user ID from the parameters
+    const id = request.params.id
+  
+    // GRAB the updated user info from the request body
+    const updatedUser = request.body
+  
+    // Use Mongoose to find the user by ID and update it with the 
+    // new user info. Be sure to include the {new: true} option as your
+    // third parameter
+    UserModel.findByIdAndUpdate(id, updatedUser, { new: true })
+        .then(() => {
+            // THEN once the new user info has been saved,
+            // redirect to that user's SHOW page
+            response.redirect(`/users/${id}`)
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+  })
+
+  // EDIT route
+
 
 module.exports = router

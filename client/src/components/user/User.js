@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Redirect } from 'react-router-dom'
+import EditForm from './EditForm'
 
 
 // You can easily nest css components in your styled-components
@@ -40,6 +42,7 @@ const User = (props) => {
   }
   const deleteUser = () => {
     props.deleteUser(props._id)
+    
   }
   return (
     <UserStyles>
@@ -48,6 +51,8 @@ const User = (props) => {
       <textarea onBlur={updateUser} onChange={handleChange} name="users" value={props.users}/> */}
       <h1>{props.userName}</h1>
       <button onClick={deleteUser}>Delete User</button>
+      {/* <button onClick={editUser}>Edit</button> */}
+      <EditForm userName={props.userName}/>
     </UserStyles>
   )
 }

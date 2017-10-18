@@ -19,8 +19,14 @@ const CollectionTitleStyle = styled.div`
   }
 `
 
+
 class CollectionPage extends Component {
- 
+    deletecollection = async (collectionId) => {
+        //const { collectionId } = this.props.match.params
+        //const id = collectionId
+        const res = await axios.delete(`/api/collections/${collectionId}`)
+        this.setState({collection: res.data})
+      }
 
 
   render () {
@@ -31,6 +37,7 @@ class CollectionPage extends Component {
           <button onClick={this.createNewCollection}>New Collection</button>
         </CollectionTitleStyle>
         <CollectionsList collections={this.props.collections}
+        deletecollection={this.deletecollection}
         />
        
       </div>
