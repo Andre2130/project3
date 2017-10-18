@@ -28,9 +28,9 @@ const UserStyles = styled.div`
 const User = (props) => {
   // Creates a method that triggers another function being passed down 
   // another function
-  const deleteUser = () => {
-    props.deleteUser(props._id)
-  }
+//   const deleteUser = () => {
+//     props.deleteUser(props._id)
+//   }
 
   const handleChange = (event) => {
     props.handleChange(event, props._id)
@@ -38,7 +38,9 @@ const User = (props) => {
   const updateUser = () => {
     props.updateUser(props._id)
   }
-
+  const deleteUser = () => {
+    props.deleteUser(props._id)
+  }
   return (
     <UserStyles>
       {/* onBlur triggers whenever the user navigates off the input */}

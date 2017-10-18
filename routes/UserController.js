@@ -86,8 +86,8 @@ router.post('/', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
   // Find the user
-  const user = await User.findById(req.params.userId)
-  // Find the specific idea and remove it from the array
+  const user = await UserModel.findById(req.params.id)
+  // Find the specific user and remove it from the array
   user.remove()
   // Save the updated user
   const saved = await user.save()

@@ -10,10 +10,7 @@ class LogInPage extends Component {
     return (
       <div>
         <h1>Log-In</h1>
-        <h3>Please Select an Existing User</h3>
-        {this.props.users.map(user => {
-          return (<Link to={`/user/${user._id}`}>{user.userName}</Link>)
-        })}
+        <h3>Already have an account <Link to={`/user`}>Click here</Link></h3>
         <SignUpForm />
       </div>
     )
