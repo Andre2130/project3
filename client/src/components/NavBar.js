@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const NavBarStyles = styled.div`
-background-color: red;
-display: inline;
+background-color: white;
+display: flex;
+justify-content: space-between;
+height: 50px;
 `
 
 const NavBar = () => {
