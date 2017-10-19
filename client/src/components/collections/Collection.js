@@ -8,7 +8,7 @@ const CollectionStyles = styled.div`
   height: 300px;
   width: 300px;
   margin: 20px;
-  background-color: rgba(253, 255, 0, 0.79);
+  background-color: red;
   input {
     font-weight: bold;
   }

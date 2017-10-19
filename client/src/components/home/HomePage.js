@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 
 const Home = styled.div`
 text-align: center;
+background-color: red;
 `
 const ButtonSty = styled.div`
 color:red;

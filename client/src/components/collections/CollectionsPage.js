@@ -14,7 +14,7 @@ const CollectionTitleStyle = styled.div`
     outline: none;
     border-radius: 2px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
-    background-color: #215de5;
+    background-color: red;
     color: #ecf0f1;
   }
 `

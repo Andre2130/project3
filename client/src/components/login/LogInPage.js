@@ -6,6 +6,7 @@ import styled from 'styled-components'
 
 const LogInStyles = styled.div`
 text-align:center;
+background-color: red;
 `
 
 
