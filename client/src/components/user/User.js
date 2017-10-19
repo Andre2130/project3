@@ -52,7 +52,7 @@ const User = (props) => {
       <h1>{props.userName}</h1>
       <button onClick={deleteUser}>Delete User</button>
       {/* <button onClick={editUser}>Edit</button> */}
-      <EditForm userName={props.userName}/>
+      <EditForm userId={props.userId} userName={props.userName} updatedUser={props.updatedUser}/>
     </UserStyles>
   )
 }
